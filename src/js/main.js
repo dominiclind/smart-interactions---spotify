@@ -47,74 +47,71 @@ var spotifyScrollView = {
 	},
 
 	onScroll : function(end){
-		var _this = this;
 		// animate that bg on down scroll
-		requestAnimationFrame(function(){
-			if(_this.y < spotifyScrollView.bg_height){
+		if(this.y < spotifyScrollView.bg_height){
 
-				$(spotifyScrollView.bg_image).css({
-					'background-position-y' : -(_this.y / 2) + 'px'
-				});
-			}
+			$(spotifyScrollView.bg_image).css({
+				'background-position-y' : -(this.y / 2) + 'px'
+			});
+		}
 
-			// make portrait fixed
-			if(this.y < 0){
-				$(spotifyScrollView.artist_info).css({
-					'-webkit-transform' : 'translateY('+ Math.abs(_this.y) +'px)'
-				});
-			}else{
-				$(spotifyScrollView.artist_info).css({
-					'-webkit-transform' : 'translateY(0px)'
-				});
-			}
+		// make portrait fixed
+		if(this.y < 0){
+			$(spotifyScrollView.artist_info).css({
+				'-webkit-transform' : 'translateY('+ Math.abs(this.y) +'px)'
+			});
+		}else{
+			$(spotifyScrollView.artist_info).css({
+				'-webkit-transform' : 'translateY(0px)'
+			});
+		}
 
-			// animate away portrait & make bg big and not blurry
-			if(_this.y > 0){
-				var percent = Math.abs(_this.y) / spotifyScrollView.bg_threshold;
+		// animate away portrait & make bg big and not blurry
+		if(this.y > 0){
+			var percent = Math.abs(this.y) / spotifyScrollView.bg_threshold;
 
-				// fade artist
+			// fade artist
 
-				$(spotifyScrollView.artist_info).css({
-					'opacity' : 1 - (0.1 + percent)
-				});
+			$(spotifyScrollView.artist_info).css({
+				'opacity' : 1 - (0.1 + percent)
+			});
 
-				// bg pic
-				$(spotifyScrollView.bg_image).css({
-					//'-webkit-filter' : 'blur(' + (12 - (12 * percent) ) + 'px)',
-					'background-position-y' : '0px',
-					'-webkit-transform' : 'translateY('+ -( Math.abs(_this.y) / 2) +'px) scale('+ (1 + (0.5 * percent) )+')',
-					'opacity' : (0.4 + percent)
-				});
-			}
-
-
-			// stick tat shuffle btn
-			if(Math.abs(_this.y) > spotifyScrollView.bg_height - 55){
-				$('.shuffle').addClass('sticky');
-				$('.shuffle').css({
-					'-webkit-transform' : 'translateY('+ ( Math.abs(_this.y) - ( spotifyScrollView.bg_height - 55) ) +'px)'
-				})
-
-				// remove unnessesary stuffs
-				$(spotifyScrollView.bg_image).css({
-					//'-webkit-filter' : 'blur(' + (12 - (12 * percent) ) + 'px)',
-					'background-position-y' : '0px',
-					'-webkit-transform' : 'translateY(0px)',
-					'opacity' : 1
-				});
-				$(spotifyScrollView.artist_info).css({
-					'opacity' : 1,
-					'-webkit-transform' : 'translateY(0px)'
-				});
+			// bg pic
+			$(spotifyScrollView.bg_image).css({
+				//'-webkit-filter' : 'blur(' + (12 - (12 * percent) ) + 'px)',
+				'background-position-y' : '0px',
+				'-webkit-transform' : 'translateY('+ -( Math.abs(this.y) / 2) +'px) scale('+ (1 + (0.5 * percent) )+')',
+				'opacity' : (0.4 + percent)
+			});
+		}
 
 
-			}else{
-				$('.shuffle').removeClass('sticky');
-				$('.shuffle').css({
-					'-webkit-transform' : 'translateY(0px)'
-				})
-			}
-		});
+		// stick tat shuffle btn
+		if(Math.abs(this.y) > spotifyScrollView.bg_height - 55){
+			$('.shuffle').addClass('sticky');
+			$('.shuffle').css({
+				'-webkit-transform' : 'translateY('+ ( Math.abs(this.y) - ( spotifyScrollView.bg_height - 55) ) +'px)'
+			})
+
+			// remove unnessesary stuffs
+			$(spotifyScrollView.bg_image).css({
+				//'-webkit-filter' : 'blur(' + (12 - (12 * percent) ) + 'px)',
+				'background-position-y' : '0px',
+				'-webkit-transform' : 'translateY(0px)',
+			});
+			$(spotifyScrollView.artist_info).css({
+				'opacity' : 1,
+				'-webkit-transform' : 'translateY(0px)'
+			});
+
+
+		}else{
+			$('.shuffle').removeClass('sticky');
+			$('.shuffle').css({
+				'-webkit-transform' : 'translateY(0px)'
+			})
+		}
+		
 	},
 
 	getSongListItem : function(songName) {
