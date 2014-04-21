@@ -1,0 +1,25 @@
+@import "_section-artist.scss";
+@import "_section-list.scss";
+
+
+.spotify-scroll-view{
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	-webkit-backface-visibility: hidden;
+
+}
+.overflow-visible{
+	overflow:visible !important;;
+}
+
+*{
+	font-family:"Montserrat";
+	font-weight:400;
+}
+
+body{
+	background:#222226;
+}

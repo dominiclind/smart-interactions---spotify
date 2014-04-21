@@ -1,0 +1,17 @@
+// layout
+$container-max-width: 700px;
+
+//breakpoints
+$breakpoint-small : 660px;
+$breakpoint-medium : 768px;
+$breakpoint-large : 1000px;
+
+
+//vars
+$padding : 15px;
+$margin  : 15px;
+
+@media (max-width:$breakpoint-small){
+	$padding : 10px;
+	$margin  : 10px;
+}

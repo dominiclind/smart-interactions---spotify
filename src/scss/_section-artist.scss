@@ -1,0 +1,76 @@
+.section.artist, .bg{
+	height:380px;
+}
+.bg{
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	background-image: url(../img/girl-cover-art.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-backface-visibility: hidden;
+
+
+	// super performance heavy
+	//-webkit-filter: blur(12px);
+	opacity: 0.4;
+}
+
+.section.artist{
+	height:380px;
+	padding-top: 50px;
+	position:relative;
+
+	.info{
+		position:relative;
+		z-index:10;
+
+		text-align:center;
+
+		.profile{
+			background-image: url(../img/pharrell.jpg);
+			height: 150px;
+			width: 150px;
+			background-position: 242px 0px;
+			background-size: 310px;
+			display: block;
+			border-radius: 50%;
+			border: none !important;
+			margin:0 auto;
+		}
+
+		h1,a,p{
+			margin-bottom:10px;
+		}
+	
+		h1{
+			text-align: center;
+			font-size: 22px;
+			color: white;
+			font-weight:400;
+		}
+
+		.button{
+			display: inline-block;
+			border: 2px solid #68696d;
+			padding: 5px 16px;
+			border-radius: 62px;
+			text-transform: uppercase;
+			font-size: 10px;
+			font-weight: bold;
+			color: white;
+		}
+
+		.small{
+			margin: 0;
+			font-size: 11px;
+			text-transform: uppercase;
+			color: white;
+		}		
+
+
+	}
+
+
+
+}
