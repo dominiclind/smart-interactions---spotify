@@ -88,31 +88,7 @@ var spotifyScrollView = {
 				'opacity' : (0.4 + percent)
 			});
 		}
-
-
-		// stick tat shuffle btn
-		if(Math.abs(this.y) > spotifyScrollView.bg_height - 55){
-			$('.shuffle').css({
-				'-webkit-transform' : 'translateY('+ ( Math.abs(this.y) - ( spotifyScrollView.bg_height - 55) ) +'px)'
-			})
-
-			// remove unnessesary stuffs
-			$(spotifyScrollView.bg_image).css({
-				//'-webkit-filter' : 'blur(' + (12 - (12 * percent) ) + 'px)',
-				'-webkit-transform' : 'translateY(0px)',
-			});
-			$(spotifyScrollView.artist_info).css({
-				'opacity' : 1,
-				'-webkit-transform' : 'translateY(0px)'
-			});
-
-
-		}else{
-			$('.shuffle').css({
-				'-webkit-transform' : 'translateY(0px)'
-			})
-		}
-		
+	
 	},
 
 	getSongListItem : function(songName) {
