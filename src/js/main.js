@@ -40,7 +40,11 @@ var spotifyScrollView = {
 	width : 0,
 
 	initIscroll : function() {
-		this.iscroll = new IScroll(this.element, { probeType: 3, mouseWheel: true });
+		this.iscroll = new IScroll(this.element, {
+			probeType: 3, 
+			mouseWheel: true , 
+			useTransition : false
+		});
 		
 		this.iscroll.on('scroll', this.onScroll);
 		this.iscroll.on('scrollEnd', this.onScroll);
