@@ -92,7 +92,6 @@ var spotifyScrollView = {
 
 		// stick tat shuffle btn
 		if(Math.abs(this.y) > spotifyScrollView.bg_height - 55){
-			$('.shuffle').addClass('sticky');
 			$('.shuffle').css({
 				'-webkit-transform' : 'translateY('+ ( Math.abs(this.y) - ( spotifyScrollView.bg_height - 55) ) +'px)'
 			})
@@ -100,7 +99,6 @@ var spotifyScrollView = {
 			// remove unnessesary stuffs
 			$(spotifyScrollView.bg_image).css({
 				//'-webkit-filter' : 'blur(' + (12 - (12 * percent) ) + 'px)',
-				'background-position-y' : '0px',
 				'-webkit-transform' : 'translateY(0px)',
 			});
 			$(spotifyScrollView.artist_info).css({
@@ -110,7 +108,6 @@ var spotifyScrollView = {
 
 
 		}else{
-			$('.shuffle').removeClass('sticky');
 			$('.shuffle').css({
 				'-webkit-transform' : 'translateY(0px)'
 			})
